@@ -1,5 +1,6 @@
 /* Variables CSS */
 :root {
+
     /* Couleurs */
     --primary-color: #2D31FA;
     --secondary-color: #0A0EE3;
@@ -28,6 +29,25 @@
     --border-radius-md: 8px;
     --border-radius-lg: 16px;
     --border-radius-round: 50%;
+    
+    /* NOUVELLES VARIABLES - BOUTONS */
+    --btn-padding: 0.8rem 2rem;
+    --btn-font-weight: 600;
+    --btn-transition: all 0.3s ease;
+    --btn-hover-transform: translateY(-3px);
+    --btn-active-transform: scale(0.95);
+    --btn-primary-shadow: 0 4px 8px rgba(45, 49, 250, 0.3);
+    --btn-secondary-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    /* NOUVELLES VARIABLES - ANIMATIONS */
+    --anim-duration-short: 0.3s;
+    --anim-duration-medium: 1s;
+    --anim-duration-long: 3s;
+    --anim-timing-function: ease;
+    --anim-timing-function-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --anim-pulse-scale-min: 1;
+    --anim-pulse-scale-max: 1.05;
+    --anim-fade-distance: 20px;
 }
 
 /* Reset CSS */
@@ -79,12 +99,12 @@ img, svg {
 /* Composants */
 .btn {
     display: inline-block;
-    padding: 0.8rem 2rem;
+    padding: var(--btn-padding);
     border-radius: var(--border-radius-md);
-    font-weight: 600;
+    font-weight: var(--btn-font-weight);
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--btn-transition);
 }
 
 .btn-primary {
@@ -95,8 +115,8 @@ img, svg {
 
 .btn-primary:hover {
     background-color: var(--secondary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(45, 49, 250, 0.3);
+    transform: var(--btn-hover-transform);
+    box-shadow: var(--btn-primary-shadow);
 }
 
 .btn-secondary {
@@ -107,8 +127,8 @@ img, svg {
 
 .btn-secondary:hover {
     background-color: var(--gray-color);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: var(--btn-hover-transform);
+    box-shadow: var(--btn-secondary-shadow);
 }
 
 .btn-outline {
@@ -120,11 +140,12 @@ img, svg {
 .btn-outline:hover {
     background-color: var(--primary-color);
     color: var(--light-color);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(45, 49, 250, 0.3);
+    transform: var(--btn-hover-transform);
+    box-shadow: var(--btn-primary-shadow);
 }
 
 /* Navbar */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -156,7 +177,7 @@ img, svg {
 .nav-links a {
     position: relative;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color var(--anim-duration-short) var(--anim-timing-function);
 }
 
 .nav-links a:hover {
@@ -171,7 +192,7 @@ img, svg {
     width: 0;
     height: 2px;
     background-color: var(--primary-color);
-    transition: width 0.3s ease;
+    transition: width var(--anim-duration-short) var(--anim-timing-function);
 }
 
 .nav-links a:hover::after {
@@ -182,6 +203,7 @@ img, svg {
 .hero-section {
     height: 100vh;
     padding-top: 80px;
+    padding-bottom: 80px;
     display: flex;
     align-items: center;
 }
@@ -190,7 +212,7 @@ img, svg {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-xl);
 }
 
 .hero-content {
@@ -320,7 +342,8 @@ img, svg {
     flex-direction: column;
     gap: var(--spacing-sm);
     align-items: flex-start;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--anim-duration-short) var(--anim-timing-function), 
+                box-shadow var(--anim-duration-short) var(--anim-timing-function);
 }
 
 .skill-card:hover {
@@ -372,7 +395,7 @@ img, svg {
     align-items: center;
     color: var(--primary-color);
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: var(--btn-transition);
 }
 
 .tool-icon:hover {
@@ -476,7 +499,7 @@ img, svg {
     justify-content: center;
     align-items: center;
     color: var(--primary-color);
-    transition: all 0.3s ease;
+    transition: var(--btn-transition);
 }
 
 .social-icon:hover {
@@ -505,7 +528,7 @@ img, svg {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(var(--anim-fade-distance));
     }
     to {
         opacity: 1;
@@ -524,23 +547,23 @@ img, svg {
 
 @keyframes pulse {
     0% {
-        transform: scale(1);
+        transform: scale(var(--anim-pulse-scale-min));
     }
     50% {
-        transform: scale(1.05);
+        transform: scale(var(--anim-pulse-scale-max));
     }
     100% {
-        transform: scale(1);
+        transform: scale(var(--anim-pulse-scale-min));
     }
 }
 
 /* Animation appliquée aux éléments */
 .hero-text h1, .hero-text p {
-    animation: fadeIn 1s ease forwards;
+    animation: fadeIn var(--anim-duration-medium) var(--anim-timing-function) forwards;
 }
 
 .hero-image svg {
-    animation: pulse 3s infinite ease-in-out;
+    animation: pulse var(--anim-duration-long) infinite var(--anim-timing-function);
 }
 
 /* Effet de survol sur les liens */
@@ -550,7 +573,7 @@ img, svg {
 }
 
 .btn:active {
-    transform: scale(0.95);
+    transform: var(--btn-active-transform);
 }
 
 .tool-icon:active {
@@ -640,6 +663,28 @@ img, svg {
     outline-offset: 3px;
 }
 
+/* Dark mode (bonus) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a2e;
+        --dark-color: #e6e6e6;
+        --gray-color: #2d2d42;
+    }
+    
+    .navbar, .skill-card {
+        background-color: #252542;
+    }
+    
+    .tool-icon {
+        background-color: #252542;
+    }
+    
+    .social-icon {
+        background-color: #252542;
+        color: var(--light-color);
+    }
+}
+
 /* Style pour les conteneurs d'images avec effet hover */
 .image-hover-container {
     position: relative;
@@ -653,7 +698,7 @@ img, svg {
     display: block;
     width: 100%;
     height: 100%;
-    transition: opacity 0.3s ease;
+    transition: opacity var(--anim-duration-short) var(--anim-timing-function);
 }
 
 /* Par défaut, le GIF est caché */
@@ -664,7 +709,7 @@ img, svg {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity var(--anim-duration-short) var(--anim-timing-function);
 }
 
 /* Au survol du conteneur, le GIF devient visible et l'image statique disparaît */
@@ -694,7 +739,7 @@ img, svg {
 
 /* Adaptation de l'animation pulse pour les GIFs */
 .hero-image .image-hover-container:hover {
-    animation: pulse 3s infinite ease-in-out;
+    animation: pulse var(--anim-duration-long) infinite var(--anim-timing-function);
 }
 /* FAQ en CSS pur sans JavaScript */
 .toggle-checkbox {
@@ -718,7 +763,7 @@ img, svg {
 .faq-accordion {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease;
+    transition: max-height var(--anim-duration-short) var(--anim-timing-function);
     opacity: 0;
     margin-top: var(--spacing-md);
     width: 100%; /* Prend la largeur complète du parent */
@@ -769,7 +814,7 @@ img, svg {
     cursor: pointer;
     position: relative;
     list-style: none;
-    transition: all 0.3s ease;
+    transition: all var(--anim-duration-short) var(--anim-timing-function);
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -783,7 +828,7 @@ img, svg {
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.5rem;
-    transition: transform 0.3s ease;
+    transition: transform var(--anim-duration-short) var(--anim-timing-function);
 }
 
 .faq-item details[open] summary::after {
@@ -793,5 +838,5 @@ img, svg {
 .faq-item .details-content {
     padding: var(--spacing-sm);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn var(--anim-duration-short) var(--anim-timing-function);
 }
