@@ -201,11 +201,9 @@ img, svg {
 
 /* Hero Section */
 .hero-section {
-    height: 100vh;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    display: flex;
-    align-items: center;
+    min-height: 100vh; /* Remplacer height par min-height */
+    padding: var(--spacing-xl) 0;
+    padding-top: calc(80px + var(--spacing-xl)); /* Ajout d'un padding-top pour la navbar */
 }
 
 .hero-container {
@@ -255,11 +253,11 @@ img, svg {
 
 /* About Section */
 .about-section {
-    height: 100vh;
+    min-height: 100vh; /* Remplacer height par min-height */
+    padding: var(--spacing-xl) 0;
+    padding-top: calc(80px + var(--spacing-xl)); /* Ajout d'un padding-top pour la navbar */
     background-color: var(--primary-color);
     color: var(--light-color);
-    display: flex;
-    align-items: center;
 }
 
 .about-container {
@@ -314,10 +312,119 @@ img, svg {
     max-width: 800px;
 }
 
+
+/* FAQ */
+.toggle-checkbox {
+    display: none; /* Cache la checkbox mais garde sa fonctionnalité */
+}
+
+.toggle-label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Conteneur pour aligner la FAQ avec le bouton */
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    width: 100%;
+}
+
+/* Par défaut, la FAQ est masquée */
+
+.faq-accordion {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--anim-duration-short) var(--anim-timing-function);
+    opacity: 0;
+    margin-top: var(--spacing-md);
+    width: 100%; /* Prend la largeur complète du parent */
+    align-self: flex-start; /* S'aligne au début comme le bouton */
+}
+
+/* Quand la checkbox est cochée, la FAQ s'affiche */
+
+.toggle-checkbox:checked ~ .faq-accordion {
+    max-height: 1000px; /* Valeur suffisamment grande */
+    opacity: 1;
+    transition: max-height 0.5s ease, opacity 0.3s ease 0.2s;
+}
+
+/* Change le texte du bouton quand la checkbox est cochée */
+
+.toggle-checkbox:checked + .toggle-label::after {
+    content: "VOIR MOINS";
+}
+
+.toggle-label::after {
+    content: "VOIR PLUS";
+}
+
+.toggle-checkbox + .toggle-label {
+    content: "";
+}
+
+/* Styles pour les items de la FAQ */
+
+.faq-item {
+    margin-bottom: var(--spacing-sm);
+    width: 100%;
+}
+
+.faq-accordion h2 {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-medium);
+    width: 100%;
+}
+
+.faq-item details {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+.faq-item summary {
+    padding: var(--spacing-sm);
+    font-weight: 450;
+    cursor: pointer;
+    position: relative;
+    list-style: none;
+    transition: all var(--anim-duration-short) var(--anim-timing-function);
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: var(--spacing-sm);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    transition: transform var(--anim-duration-short) var(--anim-timing-function);
+}
+
+.faq-item details[open] summary::after {
+    content: '-';
+}
+
+.faq-item .details-content {
+    padding: var(--spacing-sm);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn var(--anim-duration-short) var(--anim-timing-function);
+}
+
+
+
 /* Skills Section */
+
 .skills-section {
-    min-height: 100vh;
+    min-height: 100vh; /* Remplacer height par min-height */
     padding: var(--spacing-xl) 0;
+    padding-top: calc(80px + var(--spacing-xl)); /* Ajout d'un padding-top pour la navbar */
 }
 
 .skills-container {
@@ -405,12 +512,13 @@ img, svg {
 }
 
 /* contact */
+
 .contact-section {
-    height: 100vh;
+    min-height: 100vh; /* Remplacer height par min-height */
+    padding: var(--spacing-xl) 0;
+    padding-top: calc(80px + var(--spacing-xl)); /* Ajout d'un padding-top pour la navbar */
     background-color: var(--primary-color);
     color: var(--light-color);
-    display: flex;
-    align-items: center;
 }
 
 .contact-container {
@@ -464,7 +572,9 @@ img, svg {
     font-size: var(--font-size-medium);
     max-width: 800px;
 }
+
 /* Footer */
+
 .footer {
     background-color: var(--primary-color);
     color: var(--light-color);
@@ -509,6 +619,7 @@ img, svg {
 }
 
 /* Style pour les icônes SVG du footer */
+
 .social-svg {
     width: 24px;
     height: 24px;
@@ -524,7 +635,11 @@ img, svg {
     opacity: 0.8;
 }
 
+
+
+
 /* Animations */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -558,6 +673,7 @@ img, svg {
 }
 
 /* Animation appliquée aux éléments */
+
 .hero-text h1, .hero-text p {
     animation: fadeIn var(--anim-duration-medium) var(--anim-timing-function) forwards;
 }
@@ -567,6 +683,7 @@ img, svg {
 }
 
 /* Effet de survol sur les liens */
+
 .nav-links a:focus {
     outline: 2px solid var(--primary-color);
     border-radius: var(--border-radius-sm);
@@ -581,6 +698,7 @@ img, svg {
 }
 
 /* Responsive Design */
+
 @media (max-width: 992px) {
     .hero-main {
         flex-direction: column;
@@ -663,28 +781,6 @@ img, svg {
     outline-offset: 3px;
 }
 
-/* Dark mode (bonus) */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: #1a1a2e;
-        --dark-color: #e6e6e6;
-        --gray-color: #2d2d42;
-    }
-    
-    .navbar, .skill-card {
-        background-color: #252542;
-    }
-    
-    .tool-icon {
-        background-color: #252542;
-    }
-    
-    .social-icon {
-        background-color: #252542;
-        color: var(--light-color);
-    }
-}
-
 /* Style pour les conteneurs d'images avec effet hover */
 .image-hover-container {
     position: relative;
@@ -740,103 +836,4 @@ img, svg {
 /* Adaptation de l'animation pulse pour les GIFs */
 .hero-image .image-hover-container:hover {
     animation: pulse var(--anim-duration-long) infinite var(--anim-timing-function);
-}
-/* FAQ en CSS pur sans JavaScript */
-.toggle-checkbox {
-    display: none; /* Cache la checkbox mais garde sa fonctionnalité */
-}
-
-.toggle-label {
-    display: inline-block;
-    cursor: pointer;
-}
-
-/* Conteneur pour aligner la FAQ avec le bouton */
-.about-text {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    width: 100%;
-}
-
-/* Par défaut, la FAQ est masquée */
-.faq-accordion {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--anim-duration-short) var(--anim-timing-function);
-    opacity: 0;
-    margin-top: var(--spacing-md);
-    width: 100%; /* Prend la largeur complète du parent */
-    align-self: flex-start; /* S'aligne au début comme le bouton */
-}
-
-/* Quand la checkbox est cochée, la FAQ s'affiche */
-.toggle-checkbox:checked ~ .faq-accordion {
-    max-height: 1000px; /* Valeur suffisamment grande */
-    opacity: 1;
-    transition: max-height 0.5s ease, opacity 0.3s ease 0.2s;
-}
-
-/* Change le texte du bouton quand la checkbox est cochée */
-.toggle-checkbox:checked + .toggle-label::after {
-    content: "VOIR MOINS";
-}
-
-.toggle-label::after {
-    content: "VOIR PLUS";
-}
-
-.toggle-checkbox + .toggle-label {
-    content: "";
-}
-
-/* Styles pour les items de la FAQ */
-.faq-item {
-    margin-bottom: var(--spacing-sm);
-    width: 100%;
-}
-
-.faq-accordion h2 {
-    margin-bottom: var(--spacing-md);
-    font-size: var(--font-size-medium);
-    width: 100%;
-}
-
-.faq-item details {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: var(--border-radius-md);
-    overflow: hidden;
-}
-
-.faq-item summary {
-    padding: var(--spacing-sm);
-    font-weight: 600;
-    cursor: pointer;
-    position: relative;
-    list-style: none;
-    transition: all var(--anim-duration-short) var(--anim-timing-function);
-}
-
-.faq-item summary::-webkit-details-marker {
-    display: none;
-}
-
-.faq-item summary::after {
-    content: '+';
-    position: absolute;
-    right: var(--spacing-sm);
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    transition: transform var(--anim-duration-short) var(--anim-timing-function);
-}
-
-.faq-item details[open] summary::after {
-    content: '-';
-}
-
-.faq-item .details-content {
-    padding: var(--spacing-sm);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    animation: fadeIn var(--anim-duration-short) var(--anim-timing-function);
 }
