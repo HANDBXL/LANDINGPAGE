@@ -16,8 +16,6 @@
     --font-size-medium: clamp(1.2rem, 1.2vw + 0.6rem, 1.5rem);
     --font-size-large: clamp(1.5rem, 2vw + 1rem, 2.5rem);
     --font-size-xlarge: clamp(2rem, 3vw + 1rem, 3.5rem);
-    --font-size-base-mobile: clamp(0.9rem, 0.8vw + 0.4rem, 1rem);
-    --font-size-medium-mobile: clamp(1rem, 1vw + 0.5rem, 1.2rem);
     
     /* Espacement */
     --spacing-xs: clamp(0.5rem, 0.5vw, 0.75rem);
@@ -25,8 +23,7 @@
     --spacing-md: clamp(2rem, 2vw, 3rem);
     --spacing-lg: clamp(3rem, 3vw, 4.5rem);
     --spacing-xl: clamp(4rem, 5vw, 6rem);
-    --section-padding-mobile: clamp(2rem, 5vw, 4rem);
-    --container-padding-mobile: clamp(1rem, 3vw, 2rem);
+    
     /* Border-radius */
     --border-radius-sm: 4px;
     --border-radius-md: 8px;
@@ -522,13 +519,11 @@ img, svg {
 /* contact */
 
 .contact-section {
-    min-height: 100vh; /* Changer height en min-height */
+    min-height: 100vh; /* Remplacer height par min-height */
+    padding: var(--spacing-xl) 0;
+    padding-top: calc(80px + var(--spacing-xl)); /* Ajout d'un padding-top pour la navbar */
     background-color: var(--primary-color);
     color: var(--light-color);
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
 }
 
 .contact-container {
@@ -749,33 +744,72 @@ img, svg {
         margin: 0 auto;
     }
 }
+
+
+/* Media Queries pour la responsivité */
+
+
+@media (max-width: 992px) {
+    /* Gardez vos styles existants pour les images */
+    .static-image {
+        display: none;
+    }
+    
+    .hover-gif {
+        position: relative;
+        opacity: 1;
+        display: block;
+    }
+    
+    /* Ajoutez ces nouveaux styles pour la section hero */
+    .hero-main {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+
+    .hero-image {
+        order: -1; /* Place l'image en premier sur mobile */
+        margin-bottom: var(--spacing-md);
+    }
+
+    .hero-text {
+        align-items: center;
+    }
+
+    .hero-text h1 {
+        font-size: var(--font-size-large);
+    }
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         gap: var(--spacing-sm);
     }
     
+    .logo h1 {
+        font-size: var(--font-size-base);
+        text-align: center;
+    }
+    
+    /* Nouveau style pour le header */
+    .logo h1 .hello {
+        display: block; /* Force le retour à la ligne après "Hello" */
+        margin-bottom: 0.2em;
+    }
+
+    .logo h1 .description {
+        display: block;
+    }
+    
+    /* Gardez vos autres styles existants pour .nav-links, etc. */
     .nav-links {
         width: 100%;
         justify-content: center;
         gap: var(--spacing-sm);
     }
-    
-    .about-text h2 {
-        font-size: var(--font-size-medium);
-    }
-    
-    .about-text p {
-        font-size: var(--font-size-base);
-    }
-    
-    .tool-icon {
-        width: 50px;
-        height: 50px;
-        font-size: var(--font-size-small);
-    }
 }
-
 @media (max-width: 576px) {
     .nav-links {
         flex-wrap: wrap;
@@ -791,6 +825,17 @@ img, svg {
     
     .social-links {
         justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 .hello {
+        display: block;
+        margin-bottom: 0.2em;
+    }
+    
+    .logo h1 .description {
+        display: block;
     }
 }
 
