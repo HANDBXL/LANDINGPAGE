@@ -16,6 +16,8 @@
     --font-size-medium: clamp(1.2rem, 1.2vw + 0.6rem, 1.5rem);
     --font-size-large: clamp(1.5rem, 2vw + 1rem, 2.5rem);
     --font-size-xlarge: clamp(2rem, 3vw + 1rem, 3.5rem);
+    --font-size-base-mobile: clamp(0.9rem, 0.8vw + 0.4rem, 1rem);
+    --font-size-medium-mobile: clamp(1rem, 1vw + 0.5rem, 1.2rem);
     
     /* Espacement */
     --spacing-xs: clamp(0.5rem, 0.5vw, 0.75rem);
@@ -23,7 +25,8 @@
     --spacing-md: clamp(2rem, 2vw, 3rem);
     --spacing-lg: clamp(3rem, 3vw, 4.5rem);
     --spacing-xl: clamp(4rem, 5vw, 6rem);
-    
+    --section-padding-mobile: clamp(2rem, 5vw, 4rem);
+    --container-padding-mobile: clamp(1rem, 3vw, 2rem);
     /* Border-radius */
     --border-radius-sm: 4px;
     --border-radius-md: 8px;
@@ -200,10 +203,13 @@ img, svg {
 }
 
 /* Hero Section */
+
 .hero-section {
-    min-height: 100vh; /* Remplacer height par min-height */
-    padding: var(--spacing-xl) 0;
-    padding-top: calc(80px + var(--spacing-xl)); /* Ajout d'un padding-top pour la navbar */
+    min-height: 100vh; /* Changer height en min-height */
+    padding-top: calc(80px + var(--spacing-xl));
+    padding-bottom: 80px;
+    display: flex;
+    align-items: center;
 }
 
 .hero-container {
@@ -253,11 +259,13 @@ img, svg {
 
 /* About Section */
 .about-section {
-    min-height: 100vh; /* Remplacer height par min-height */
-    padding: var(--spacing-xl) 0;
-    padding-top: calc(80px + var(--spacing-xl)); /* Ajout d'un padding-top pour la navbar */
+    min-height: 100vh; /* Changer height en min-height */
     background-color: var(--primary-color);
     color: var(--light-color);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .about-container {
@@ -514,11 +522,13 @@ img, svg {
 /* contact */
 
 .contact-section {
-    min-height: 100vh; /* Remplacer height par min-height */
-    padding: var(--spacing-xl) 0;
-    padding-top: calc(80px + var(--spacing-xl)); /* Ajout d'un padding-top pour la navbar */
+    min-height: 100vh; /* Changer height en min-height */
     background-color: var(--primary-color);
     color: var(--light-color);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-container {
@@ -682,43 +692,63 @@ img, svg {
     animation: pulse var(--anim-duration-long) infinite var(--anim-timing-function);
 }
 
-/* Effet de survol sur les liens */
-
-.nav-links a:focus {
-    outline: 2px solid var(--primary-color);
-    border-radius: var(--border-radius-sm);
+/* Style pour les conteneurs d'images avec effet hover */
+.image-hover-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.btn:active {
-    transform: var(--btn-active-transform);
+/* Image statique (PNG) */
+.static-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: opacity var(--anim-duration-short) var(--anim-timing-function);
 }
 
-.tool-icon:active {
-    transform: scale(0.9);
+/* GIF animé */
+.hover-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity var(--anim-duration-short) var(--anim-timing-function);
 }
 
-/* Responsive Design */
+/* Comportement hover pour desktop (écrans > 992px) */
+@media (min-width: 993px) {
+    .image-hover-container:hover .hover-gif {
+        opacity: 1;
+    }
+    
+    .image-hover-container:hover .static-image {
+        opacity: 0;
+    }
+}
 
+/* Comportement automatique pour mobile (écrans ≤ 992px) */
 @media (max-width: 992px) {
-    .hero-main {
-        flex-direction: column;
-        text-align: center;
+    .static-image {
+        display: none; /* Cache complètement l'image statique */
     }
     
-    .hero-image {
-        margin-bottom: var(--spacing-md);
+    .hover-gif {
+        position: relative; /* Change la position pour un meilleur comportement */
+        opacity: 1; /* Montre directement le GIF */
+        display: block;
     }
     
-    .skills-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .skill-card {
-        max-width: 500px;
+    /* Réduire la taille des GIFs sur mobile pour de meilleures performances */
+    .skill-image.hover-gif,
+    .logo-gif.hover-gif {
+        max-width: 300px; /* ou la taille que vous souhaitez */
+        margin: 0 auto;
     }
 }
-
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
