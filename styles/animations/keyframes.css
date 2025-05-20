@@ -1,0 +1,45 @@
+/* Animations globales */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(var(--anim-fade-distance));
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(var(--anim-pulse-scale-min));
+    }
+    50% {
+        transform: scale(var(--anim-pulse-scale-max));
+    }
+    100% {
+        transform: scale(var(--anim-pulse-scale-min));
+    }
+}
+
+/* Classes d'animation réutilisables */
+.fade-in {
+    animation: fadeIn var(--anim-duration-medium) var(--anim-timing-function) forwards;
+}
+
+.rotate {
+    animation: rotate var(--anim-duration-medium) var(--anim-timing-function) infinite;
+}
+
+.pulse {
+    animation: pulse var(--anim-duration-long) var(--anim-timing-function) infinite;
+}

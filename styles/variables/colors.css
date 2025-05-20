@@ -1,0 +1,12 @@
+/* Colors Styles */
+
+
+
+:root {
+    --primary-color: #2D31FA;
+    --secondary-color: #0A0EE3;
+    --light-color: #FFFFFF;
+    --dark-color: #333333;
+    --bg-color: #FFFFFF;
+    --gray-color: #F5F5F5;
+}

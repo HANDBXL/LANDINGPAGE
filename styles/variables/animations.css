@@ -1,0 +1,116 @@
+/* Animations Styles */
+
+
+
+:root {
+    --anim-duration-short: 0.3s;
+    --anim-duration-medium: 1s;
+    --anim-duration-long: 3s;
+    --anim-timing-function: ease;
+    --anim-timing-function-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --anim-pulse-scale-min: 1;
+    --anim-pulse-scale-max: 1.05;
+    --anim-fade-distance: 20px;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(var(--anim-fade-distance));
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(var(--anim-pulse-scale-min));
+    }
+    50% {
+        transform: scale(var(--anim-pulse-scale-max));
+    }
+    100% {
+        transform: scale(var(--anim-pulse-scale-min));
+    }
+}
+
+/* Animation appliquée aux éléments */
+
+.hero-text h1, .hero-text p {
+    animation: fadeIn var(--anim-duration-medium) var(--anim-timing-function) forwards;
+}
+
+.hero-image svg {
+    animation: pulse var(--anim-duration-long) infinite var(--anim-timing-function);
+}
+
+/* Style pour les conteneurs d'images avec effet hover */
+.image-hover-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Image statique (PNG) */
+.static-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: opacity var(--anim-duration-short) var(--anim-timing-function);
+}
+
+/* GIF animé */
+.hover-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity var(--anim-duration-short) var(--anim-timing-function);
+}
+
+/* Comportement hover pour desktop (écrans > 992px) */
+@media (min-width: 993px) {
+    .image-hover-container:hover .hover-gif {
+        opacity: 1;
+    }
+    
+    .image-hover-container:hover .static-image {
+        opacity: 0;
+    }
+}
+
+/* Comportement automatique pour mobile (écrans ≤ 992px) */
+@media (max-width: 992px) {
+    .static-image {
+        display: none; /* Cache complètement l'image statique */
+    }
+    
+    .hover-gif {
+        position: relative; /* Change la position pour un meilleur comportement */
+        opacity: 1; /* Montre directement le GIF */
+        display: block;
+    }
+    
+    /* Réduire la taille des GIFs sur mobile pour de meilleures performances */
+    .skill-image.hover-gif,
+    .logo-gif.hover-gif {
+        max-width: 300px; /* ou la taille que vous souhaitez */
+        margin: 0 auto;
+    }
+}

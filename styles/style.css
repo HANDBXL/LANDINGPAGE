@@ -1,0 +1,17 @@
+/* Import des variables */
+@import url('./variables/all-variables.css');
+
+/* Import des utilitaires */
+@import url('./utils/reset.css');
+@import url('./utils/responsive.css');
+
+/* Import des animations */
+@import url('./animations/keyframes.css');
+
+/* Import des composants */
+@import url('./components/navbar.css');
+@import url('./components/hero.css');
+@import url('./components/about.css');
+@import url('./components/skills.css');
+@import url('./components/contact.css');
+@import url('./components/footer.css');

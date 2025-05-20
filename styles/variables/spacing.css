@@ -1,0 +1,16 @@
+/* Spacing Styles */
+
+
+
+:root {
+    --spacing-xs: clamp(0.5rem, 0.5vw, 0.75rem);
+    --spacing-sm: clamp(1rem, 1vw, 1.5rem);
+    --spacing-md: clamp(2rem, 2vw, 3rem);
+    --spacing-lg: clamp(3rem, 3vw, 4.5rem);
+    --spacing-xl: clamp(4rem, 5vw, 6rem);
+    
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    --border-radius-round: 50%;
+}
