@@ -9,13 +9,3 @@
     --bg-color: #FFFFFF;
     --gray-color: #F5F5F5;
 }
-
-/* Dark mode - sera activé quand la checkbox est cochée */
-body.dark-mode {
-    --bg-color: #232323;
-    --primary-color: #FFFC47;
-    --secondary-color: #F5B301;
-    --light-color: #F8F8F8;
-    --dark-color: #141414;
-    --gray-color: #3D3D3D;
-}

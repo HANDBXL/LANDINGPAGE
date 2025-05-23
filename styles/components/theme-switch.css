@@ -11,6 +11,10 @@
 }
 
 .theme-label {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
     cursor: pointer;
     padding: 8px;
     border-radius: var(--border-radius-round);
@@ -18,10 +22,11 @@
     align-items: center;
     justify-content: center;
     transition: all var(--anim-duration-short) var(--anim-timing-function);
+    background-color: var(--gray-color);
 }
 
 .theme-label:hover {
-    background-color: var(--gray-color);
+    transform: scale(1.1);
 }
 
 .theme-icon {
@@ -29,48 +34,50 @@
     transition: transform var(--anim-duration-short) var(--anim-timing-function);
 }
 
-/* Le sélecteur qui active le mode sombre */
-.theme-input:checked ~ main,
-.theme-input:checked ~ header,
-.theme-input:checked ~ footer,
-.theme-input:checked ~ section {
-    background-color: var(--bg-color);
-    color: var(--light-color);
+/* Activation du mode sombre via la checkbox */
+.theme-input:checked ~ .theme-wrapper {
+    --bg-color: #232323;
+    --primary-color: #FFFC47;
+    --secondary-color: #F5B301;
+    --light-color: #F8F8F8;
+    --dark-color: #141414;
+    --gray-color: #3D3D3D;
 }
 
-/* Rotation de l'icône quand activé */
+/* Rotation de l'icône */
 .theme-input:checked + .theme-label .theme-icon {
     transform: rotate(360deg);
 }
 
 /* Gestion des images en mode sombre */
 
-.theme-input:checked ~ * .hero-icon {
+.theme-input:checked ~ .theme-wrapper .hero-icon {
     content: url('../assets/hero-icon-static-dark.png');
 }
-.theme-input:checked ~ * .hero-icon.animated{
+.theme-input:checked ~ .theme-wrapper .hero-icon.animated{
     content: url('../assets/hero-icon-dark.gif');
 }
 
 
-.theme-input:checked ~ * .skill-icon1 {
+.theme-input:checked ~ .theme-wrapper .skill-icon1 {
     content: url('../assets/skill-icon1-static-dark.png');
 }
-.theme-input:checked ~ * .skill-icon1.animated {
+.theme-input:checked ~ .theme-wrapper .skill-icon1.animated {
     content: url('../assets/skill-icon1-dark.gif');
 }
 
-.theme-input:checked ~ * .skill-icon2 {
+
+.theme-input:checked ~ .theme-wrapper .skill-icon2 {
     content: url('../assets/skill-icon2-static-dark.png');
 }
-.theme-input:checked ~ * .skill-icon2.animated {
+.theme-input:checked ~ .theme-wrapper .skill-icon2.animated {
     content: url('../assets/skill-icon2-dark.gif');
 }
 
-.theme-input:checked ~ * .skill-icon3 {
+
+.theme-input:checked ~ .theme-wrapper .skill-icon3 {
     content: url('../assets/skill-icon3-static-dark.png');
 }
-.theme-input:checked ~ * .skill-icon3.animated {
+.theme-input:checked ~ .theme-wrapper .skill-icon3.animated {
     content: url('../assets/skill-icon3-dark.gif');
 }
-/* Répétez pour les autres icônes avec la même logique */
