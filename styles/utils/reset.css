@@ -59,3 +59,22 @@ img, svg {
     outline: 3px solid var(--primary-color);
     outline-offset: 3px;
 }
+
+/* DARK-MODE */
+
+/* Transition douce pour les changements de couleur */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-wrapper {
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--dark-color);
+}
+
+/* Style de base pour les images qui peuvent changer avec le thème */
+img[src*="-static"],
+img[src*=".gif"] {
+    transition: opacity 0.3s ease;
+}

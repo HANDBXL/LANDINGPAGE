@@ -1,0 +1,76 @@
+/* Theme Switch Styles */
+
+.theme-switch {
+    position: relative;
+    margin-left: var(--spacing-sm);
+}
+
+.theme-input {
+    opacity: 0;
+    position: absolute;
+}
+
+.theme-label {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--border-radius-round);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--anim-duration-short) var(--anim-timing-function);
+}
+
+.theme-label:hover {
+    background-color: var(--gray-color);
+}
+
+.theme-icon {
+    font-size: 1.2rem;
+    transition: transform var(--anim-duration-short) var(--anim-timing-function);
+}
+
+/* Le sélecteur qui active le mode sombre */
+.theme-input:checked ~ main,
+.theme-input:checked ~ header,
+.theme-input:checked ~ footer,
+.theme-input:checked ~ section {
+    background-color: var(--bg-color);
+    color: var(--light-color);
+}
+
+/* Rotation de l'icône quand activé */
+.theme-input:checked + .theme-label .theme-icon {
+    transform: rotate(360deg);
+}
+
+/* Gestion des images en mode sombre */
+
+.theme-input:checked ~ * .hero-icon {
+    content: url('../assets/hero-icon-static-dark.png');
+}
+.theme-input:checked ~ * .hero-icon.animated{
+    content: url('../assets/hero-icon-dark.gif');
+}
+
+
+.theme-input:checked ~ * .skill-icon1 {
+    content: url('../assets/skill-icon1-static-dark.png');
+}
+.theme-input:checked ~ * .skill-icon1.animated {
+    content: url('../assets/skill-icon1-dark.gif');
+}
+
+.theme-input:checked ~ * .skill-icon2 {
+    content: url('../assets/skill-icon2-static-dark.png');
+}
+.theme-input:checked ~ * .skill-icon2.animated {
+    content: url('../assets/skill-icon2-dark.gif');
+}
+
+.theme-input:checked ~ * .skill-icon3 {
+    content: url('../assets/skill-icon3-static-dark.png');
+}
+.theme-input:checked ~ * .skill-icon3.animated {
+    content: url('../assets/skill-icon3-dark.gif');
+}
+/* Répétez pour les autres icônes avec la même logique */
