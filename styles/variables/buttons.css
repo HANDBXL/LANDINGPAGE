@@ -14,14 +14,16 @@
 
 
 /* Composants */
+
 .btn {
     display: inline-block;
-    padding: var(--btn-padding);
-    border-radius: var(--border-radius-md);
-    font-weight: var(--btn-font-weight);
-    text-align: center;
+    padding: 0.8rem 1.6rem;
+    font-size: var(--font-size-small);
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: var(--border-radius-sm);
+    transition: all var(--anim-duration-short) var(--anim-timing-function);
     cursor: pointer;
-    transition: var(--btn-transition);
 }
 
 .btn-primary {

@@ -20,11 +20,6 @@
     font-weight: 700;
 }
 
-/* Ensure list items are inline */
-.header-links li {
-    display: inline-flex;
-}
-
 .header-logo span {
     color: var(--primary-color);
 }
@@ -37,13 +32,21 @@
     padding: 0;
     flex-direction: row;
     align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.header-links li {
+    display: inline-flex;
 }
 
 .header-links a {
     position: relative;
     font-weight: 500;
     transition: color var(--anim-duration-short) var(--anim-timing-function);
+    white-space: nowrap; /* Empêche le retour à la ligne du texte */
 }
+
 
 .header-links a:hover {
     color: var(--primary-color);

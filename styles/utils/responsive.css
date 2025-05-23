@@ -47,12 +47,12 @@
         text-align: center;
     }
     
-    .header-logo h1 .navbar-hello {
+    .header-logo h1 .header-hello {
         display: block;
         margin-bottom: 0.2em;
     }
 
-    .header-logo h1 .navbar-description {
+    .header-logo h1 .header-description {
         display: block;
     }
     
@@ -79,15 +79,58 @@
     .social-links {
         justify-content: center;
     }
-}
+    .faq-item summary {
+        padding: var(--spacing-sm);
+        padding-right: 2.5rem;
+        font-size: 0.9rem;
+        }
+        
+    .faq-item summary::after {
+        right: 0.5rem;
+        font-size: 1.2rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        }
+    }
+
 
 @media (max-width: 480px) {
-    .header-logo h1 .navbar-hello {
+    .header-logo h1 .header-hello {
         display: block;
         margin-bottom: 0.2em;
     }
     
-    .header-logo h1 .navbar-description {
+    .header-logo h1 .header-description {
         display: block;
+    }
+}
+@media screen and (max-width: 375px) {
+    .header {
+        padding: 0.5rem;
+    }
+    
+    .header-logo h1 {
+        font-size: 0.9rem;
+    }
+    
+    .header-links {
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .header-links a {
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .header {
+        flex-direction: column;
+        padding: 0.25rem;
+    }
+    
+    .header-links {
+        width: 100%;
+        justify-content: space-around;
     }
 }
