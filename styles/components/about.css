@@ -1,6 +1,7 @@
 /* About Styles */
 
 
+
 .about-section {
     min-height: 100vh;
     background-color: var(--primary-color);
@@ -9,9 +10,8 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    margin-top: var(--spacing-xl);
-    padding: var(--spacing-xl);
-
+    padding: var(--spacing-xl) 0; 
+    padding-top: calc(80px + var(--spacing-xl));
 }
 
 .about-container {
@@ -20,7 +20,6 @@
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
-
 .about-content {
     display: flex;
     flex-direction: column;
