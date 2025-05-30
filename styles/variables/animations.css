@@ -84,6 +84,27 @@
     transition: opacity var(--anim-duration-short) var(--anim-timing-function);
 }
 
+/* Fade In pour les sections */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-animate {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Rotation douce pour les icônes */
+@keyframes rotateIn {
+    from { transform: rotate(-5deg); }
+    to { transform: rotate(0); }
+}
+
+.skill-icon:hover img {
+    animation: rotateIn 0.5s ease-out forwards;
+}
+
 /* Comportement hover pour desktop (écrans > 992px) */
 @media (min-width: 993px) {
     .image-hover-container:hover .hover-gif {
