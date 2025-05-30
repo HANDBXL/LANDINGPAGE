@@ -1,11 +1,13 @@
 /* contact */
 
 .contact-section {
-    min-height: 100vh; /* Remplacer height par min-height */
-    padding: var(--spacing-xl) 0;
-    padding-top: calc(80px + var(--spacing-xl)); /* Ajout d'un padding-top pour la navbar */
+    min-height: 100vh;
     background-color: var(--primary-color);
     color: var(--light-color);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-container {
