@@ -14,7 +14,6 @@
 
 
 /* Composants */
-
 .btn {
     display: inline-block;
     padding: 0.8rem 1.6rem;
@@ -27,33 +26,33 @@
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    color: var(--light-color);
-    border: none;
-}
-
-.btn-primary:hover {
-    background-color: var(--secondary-color);
-    transform: var(--btn-hover-transform);
-    box-shadow: var(--btn-primary-shadow);
+    background-color: var(--light-color);
+    color: var(--primary-color);
 }
 
 .btn-secondary {
-    background-color: var(--light-color);
-    color: var(--primary-color);
-    border: none;
+    background-color: transparent;
+    color: var(--light-color);
+    border: 1px solid var(--light-color);
 }
 
-.btn-secondary:hover {
-    background-color: var(--gray-color);
-    transform: var(--btn-hover-transform);
-    box-shadow: var(--btn-secondary-shadow);
-}
 
 .btn-outline {
     background-color: transparent;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
+}
+
+
+/* Hover states */
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    color: var(--light-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--light-color);
+    color: var(--primary-color);
 }
 
 .btn-outline:hover {

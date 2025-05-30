@@ -66,24 +66,3 @@
 .header-links a:hover::after {
     width: 100%;
 }
-
-/* DARK-MODE */
-
-.theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: var(--border-radius-round);
-    transition: all var(--anim-duration-short) var(--anim-timing-function);
-}
-
-.theme-toggle:hover {
-    background-color: var(--gray-color);
-    transform: rotate(45deg);
-}
-
-.theme-toggle-icon {
-    font-size: 1.2rem;
-    display: inline-block;
-}

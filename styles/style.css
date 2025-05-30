@@ -7,7 +7,6 @@
 
 /* Import des composants */
 @import url('./components/header.css');
-@import url('./components/theme-switch.css'); 
 @import url('./components/hero.css');
 @import url('./components/about.css');
 @import url('./components/skills.css');

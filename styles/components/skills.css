@@ -5,6 +5,8 @@
     min-height: 100vh;
     padding: var(--spacing-xl) 0;
     padding-top: calc(80px + var(--spacing-xl));
+    background-color: var(--bg-color);
+    color: var(--dark-color);
 }
 
 .skills-container {
@@ -31,6 +33,14 @@
     align-items: flex-start;
     transition: transform var(--anim-duration-short) var(--anim-timing-function), 
                 box-shadow var(--anim-duration-short) var(--anim-timing-function);
+}
+
+.skill-card:hover .hover-gif {
+    opacity: 1;
+}
+
+.skill-card:hover .static-image {
+    opacity: 0;
 }
 
 .skill-card:hover {
