@@ -1,6 +1,7 @@
 /* Skills Section */
 
 
+
 .skills-section {
     min-height: 100vh;
     padding: var(--spacing-xl) 0;
@@ -11,7 +12,6 @@
 
 .skills-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: var(--spacing-md);
     width: 100%;
@@ -22,7 +22,7 @@
 
 .skill-card {
     flex: 1;
-    min-width: 300px;
+    min-width: 0; /* Suppression de la largeur minimale fixe */
     max-width: 350px;
     background-color: var(--light-color);
     border-radius: var(--border-radius-md);
@@ -34,6 +34,7 @@
     transition: transform var(--anim-duration-short) var(--anim-timing-function), 
                 box-shadow var(--anim-duration-short) var(--anim-timing-function);
 }
+
 
 .skill-card:hover .hover-gif {
     opacity: 1;

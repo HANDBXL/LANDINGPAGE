@@ -29,6 +29,14 @@
         font-size: var(--font-size-large);
     }
     
+    .skills-container {
+        gap: var(--spacing-sm);
+    }
+
+    .skill-card {
+        max-width: 300px; 
+    }
+
     .skill-image.hover-gif,
     .logo-gif.hover-gif {
         max-width: 300px;
@@ -60,6 +68,16 @@
         width: 100%;
         justify-content: center;
         gap: var(--spacing-sm);
+    }
+
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-card {
+        width: 100%;
+        max-width: 500px; 
     }
 }
 
