@@ -27,32 +27,33 @@
             
             </li>
 
-    <nav class="header">
-
-        <div class="header-logo">
-
-            <h1>
-
-            <span class="header-hello">Hello,</span>
-
-            <span class="header-description">Jean-Charles recherche un stage</span>
-
-            </h1>
+    <nav class="header" aria-label="Navigation principale">
     
+        <div class="header-logo" role="banner">
+        
+            <h1>
+        
+            <span class="header-hello" aria-label="Salutation">Hello,</span>
+        
+            <span class="header-description">Jean-Charles recherche un stage</span>
+        
+            </h1>
+        
         </div>
     
-        <ul class="header-links">
-
-            <li><a href="#hero">Accueil</a></li>
-
-            <li><a href="#about">À propos</a></li>
-
-            <li><a href="#skills">Compétences</a></li>
-
-            <li><a href="#contact">Contact</a></li>
-
+        <ul class="header-links" role="menubar" aria-label="Menu principal">
+        
+            <li role="none"><a href="#hero" role="menuitem">Accueil</a></li>
+        
+            <li role="none"><a href="#about" role="menuitem">À propos</a></li>
+        
+            <li role="none"><a href="#skills" role="menuitem">Compétences</a></li>
+        
+            <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+        
         </ul>
-    </nav>
+
+</nav>
 
 <!-- Hero Section -->
     
@@ -189,10 +190,18 @@
     
         <div class="image-hover-container no-rotate">
         
-            <img src="images/skill-icon1-static.png" alt="Compétence en design" loading="lazy" class="static-image skill-image skill-icon1">
-        
-            <img src="images/skill-icon1.gif" alt="Compétence en design animée" loading="lazy" class="hover-gif skill-image skill-icon1 animated">
-                
+            <img 
+            src="images/skill-icon1-static.png" 
+            alt="Illustration représentant mes compétences en design" 
+            loading="lazy" 
+            class="static-image skill-image skill-icon1"
+            >
+            <img 
+            src="images/skill-icon1.gif" 
+            alt="Illustration représentant mes compétences en design" 
+            loading="lazy" 
+            class="hover-gif skill-image skill-icon1 animated"            
+            >
         </div>
 
         </div>
@@ -211,11 +220,19 @@
 <!-- Conteneur avec image statique et GIF au survol -->
         
         <div class="image-hover-container no-rotate">
-        
-            <img src="images/skill-icon2-static.png" alt="Design UX/UI" loading="lazy" class="static-image skill-image skill-icon2">
-        
-            <img src="images/skill-icon2.gif" alt="Design UX/UI animé" loading="lazy" class="hover-gif skill-image skill-icon2 animated">
 
+            <img 
+            src="images/skill-icon2-static.png" 
+            alt="Illustration représentant mes compétences en UX/UI design" 
+            loading="lazy" 
+            class="static-image skill-image skill-icon2"
+            >
+            <img 
+            src="images/skill-icon2.gif" 
+            alt="Illustration représentant mes compétences en UX/UI design"  
+            loading="lazy" 
+            class="hover-gif skill-image skill-icon2 animated"            
+            >
         </div>
                 
         </div>
@@ -235,10 +252,18 @@
     
         <div class="image-hover-container no-rotate">
         
-            <img src="images/skill-icon3-static.png" alt="Expérience professionnelle" loading="lazy" class="static-image skill-image skill-icon3">
-        
-            <img src="images/skill-icon3.gif" alt="Expérience professionnelle animée" loading="lazy" class="hover-gif skill-image skill-icon3 animated">
-                
+            <img 
+            src="images/skill-icon3-static.png" 
+            alt="Illustration représentant mes compétences en ILLUSTRATION" 
+            loading="lazy" 
+            class="static-image skill-image skill-icon3"
+            >
+            <img 
+            src="images/skill-icon3.gif" 
+            alt="Illustration représentant mes compétences en ILLUSTRATION"  
+            loading="lazy" 
+            class="hover-gif skill-image skill-icon3 animated"            
+            >     
         </div>
                 
         </div>
@@ -289,35 +314,69 @@
     <footer class="footer">
     
         <div class="footer-content">
-        <div class="social-links">
-
+        <div class="social-links" role="navigation" aria-label="Réseaux sociaux">
+    
 <!-- GitHub -->
 
-            <a href="https://github.com/HANDBXL" target="_blank" class="social-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-svg">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
+            <a href="https://github.com/HANDBXL" 
+            target="_blank" 
+            class="social-icon"
+            rel="noopener noreferrer"
+            aria-label="Visitez mon profil GitHub">
+            <svg aria-hidden="true" 
+            focusable="false" 
+            class="social-svg" 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24"
+            fill="currentColor">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            <span class="visually-hidden">GitHub</span>
             </a>
             
     
 <!-- LinkedIn -->
 
-            <a href="https://www.linkedin.com/in/fremontjeancharles/" target="_blank" class="social-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-svg">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-                </svg>
+            <a href="https://www.linkedin.com/in/fremontjeancharles/" 
+            target="_blank" 
+            class="social-icon"
+            rel="noopener noreferrer"
+            aria-label="Visitez mon profil LinkedIn">
+            <svg aria-hidden="true" 
+            focusable="false" 
+            class="social-svg" 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24"
+            fill="currentColor">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+             <span class="visually-hidden">LinkedIn</span>
             </a>
             
 <!-- Instagram -->
 
-            <a href="https://www.instagram.com/jean.charles.fremont/" target="_blank" class="social-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-svg">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
+            <a href="https://www.instagram.com/jean.charles.fremont/" 
+            target="_blank" 
+            class="social-icon"
+            rel="noopener noreferrer"
+            aria-label="Visitez mon profil Instagram">
+            <svg aria-hidden="true" 
+            focusable="false" 
+            class="social-svg" 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <circle cx="12" cy="12" r="3"></circle>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span class="visually-hidden">Instagram</span>
             </a>
 
         </div>
