@@ -23,13 +23,3 @@ Ce projet a pour but de faciliter les contacts professionnels et de centraliser 
 
 ---
 
-## 📸 Aperçu
-
-![screenshot](./images/viewdekstop-01.png)  
-![screenshot](./images/viewdekstop-02.png)  
-![screenshot](./images/viewmobile.png)  
-
----
-
-
-
